@@ -15,6 +15,11 @@
 		D45229F7285A7926002E6291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45229F6285A7926002E6291 /* Assets.xcassets */; };
 		D45229FA285A7926002E6291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45229F8285A7926002E6291 /* LaunchScreen.storyboard */; };
 		D4522A09285A831C002E6291 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4522A08285A831C002E6291 /* MainVM.swift */; };
+		D4522A0B285A8390002E6291 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4522A0A285A8390002E6291 /* Network.swift */; };
+		D4522A0D285A83AC002E6291 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4522A0C285A83AC002E6291 /* Router.swift */; };
+		D4522A15285A846F002E6291 /* HomeWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4522A13285A846F002E6291 /* HomeWeatherCell.swift */; };
+		D4522A16285A846F002E6291 /* HomeWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4522A14285A846F002E6291 /* HomeWeatherCell.xib */; };
+		D4522A18285A848A002E6291 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4522A17285A848A002E6291 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		D45229F9285A7926002E6291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D45229FB285A7926002E6291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4522A08285A831C002E6291 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
+		D4522A0A285A8390002E6291 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D4522A0C285A83AC002E6291 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D4522A13285A846F002E6291 /* HomeWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherCell.swift; sourceTree = "<group>"; };
+		D4522A14285A846F002E6291 /* HomeWeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeWeatherCell.xib; sourceTree = "<group>"; };
+		D4522A17285A848A002E6291 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F75114A0600D814E382612B5 /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8895FCE53E2BC7FD1EA434A /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +117,9 @@
 		D4522A03285A8219002E6291 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				D4522A10285A83FA002E6291 /* WeatherCell */,
+				D4522A0F285A83D1002E6291 /* Router */,
+				D4522A0E285A83BD002E6291 /* Network */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -114,6 +127,7 @@
 		D4522A04285A8237002E6291 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D4522A17285A848A002E6291 /* Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -140,6 +154,31 @@
 			children = (
 			);
 			path = HomeDetail;
+			sourceTree = "<group>";
+		};
+		D4522A0E285A83BD002E6291 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D4522A0A285A8390002E6291 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D4522A0F285A83D1002E6291 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D4522A0C285A83AC002E6291 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D4522A10285A83FA002E6291 /* WeatherCell */ = {
+			isa = PBXGroup;
+			children = (
+				D4522A13285A846F002E6291 /* HomeWeatherCell.swift */,
+				D4522A14285A846F002E6291 /* HomeWeatherCell.xib */,
+			);
+			path = WeatherCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D45229FA285A7926002E6291 /* LaunchScreen.storyboard in Resources */,
+				D4522A16285A846F002E6291 /* HomeWeatherCell.xib in Resources */,
 				D45229F7285A7926002E6291 /* Assets.xcassets in Resources */,
 				D45229F5285A7923002E6291 /* Main.storyboard in Resources */,
 			);
@@ -257,10 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4522A0B285A8390002E6291 /* Network.swift in Sources */,
 				D45229F2285A7923002E6291 /* MainVC.swift in Sources */,
 				D45229EE285A7923002E6291 /* AppDelegate.swift in Sources */,
 				D45229F0285A7923002E6291 /* SceneDelegate.swift in Sources */,
+				D4522A0D285A83AC002E6291 /* Router.swift in Sources */,
 				D4522A09285A831C002E6291 /* MainVM.swift in Sources */,
+				D4522A15285A846F002E6291 /* HomeWeatherCell.swift in Sources */,
+				D4522A18285A848A002E6291 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
