@@ -7,8 +7,23 @@
 
 import Foundation
 import Alamofire
-class MainVM {
+
+protocol MainVMProtocol {
     
+}
+
+protocol MainVMDelegate: MainVMProtocol{
+    var delegate: MainVMDelegateOutputs? {get set}
+    
+}
+
+protocol MainVMDelegateOutputs: AnyObject{
+    
+}
+
+
+class MainVM: MainVMDelegate{
+    var delegate: MainVMDelegateOutputs?
     
     
 }

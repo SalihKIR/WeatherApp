@@ -18,9 +18,16 @@ class MainVC: UIViewController {
         homeTabelView.register(HomeWeatherCell.nibName, forCellReuseIdentifier: HomeWeatherCell.identifier)
         
     }
-
-
+    
 }
+
+
+
+
+
+
+
+
 extension MainVC: UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +37,6 @@ extension MainVC: UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let HomeweatherCell = homeTabelView.dequeueReusableCell( withIdentifier: HomeWeatherCell.identifier, for: indexPath) as! HomeWeatherCell
         return HomeweatherCell
-        
     }
     
     

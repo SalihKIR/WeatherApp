@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+import Foundation
+
+class Api {
+    
+    let network = NetworkManager()
+    
+}
