@@ -14,7 +14,9 @@ protocol WeatherDetailVMProtocol{
      
 }
 protocol WeatherDetailVMDelegate : WeatherDetailVMProtocol{
-    
+    var delegate: MainVMDelegateOutputs? {get set}
+    var weatherData: APIWeather? {get set}
+    //func getUpcoming()
     
 }
 protocol WeatherDetailVMDelegateOutputs: AnyObject{
@@ -23,7 +25,12 @@ protocol WeatherDetailVMDelegateOutputs: AnyObject{
 
 class WeatherDetailVM: WeatherDetailVMDelegate {
     
+    var network: NetworkManager = NetworkManager()
+    var weatherData: APIWeather?
+    var delegate: MainVMDelegateOutputs?
     
     
+  
     
 }
+

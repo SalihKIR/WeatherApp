@@ -9,20 +9,44 @@ import UIKit
 
 
 class MainVC: UIViewController {
+ 
     @IBOutlet weak var homeTabelView: UITableView!
+    var viewmodel : MainVM = MainVM()
+    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewmodel.delegate = self
+        viewmodel.getUpcomingData()
         homeTabelView.delegate = self
         homeTabelView.dataSource = self
         homeTabelView.register(HomeWeatherCell.nibName, forCellReuseIdentifier: HomeWeatherCell.identifier)
         
     }
     
+    @IBAction func testBUTTON(_ sender: Any) {
+        AppRouter.shared.showDetailPage(self.navigationController, data: viewmodel.weatherData!)
+    }
 }
 
 
+extension MainVC: MainVMDelegateOutputs {
+    func successHeader(_ type: MainVMOutputs) {
+        switch type {
+        case .succes(let lessons):
+            button.titleLabel?.text = lessons.request.language
+            homeTabelView.reloadData()
+        case .error(let string):
+            break
+        }
+    }
 
+    func reloadTableView() {
+        homeTabelView.reloadData()
+    }
+    
+    
+}
 
 
 

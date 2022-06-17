@@ -10,7 +10,7 @@ import UIKit
 
 public enum StoryboardNames: String {
     case main = "Main"
-    
+    case weatherDetail = "WeatherDetail"
 }
 
 protocol StoryboardSettings {
