@@ -23,7 +23,6 @@ protocol MainVMDelegate: AnyObject{
 }
 
 protocol MainVMDelegateOutputs: AnyObject{
-    func reloadTableView()
     func successHeader(_ type: MainVMOutputs)
 }
 
@@ -42,12 +41,12 @@ class MainVM: MainVMDelegate{
         network.getDownloadMovie { [weak self ](response,err) in
             guard let self = self else {return}
             if let response = response {
+                self.weatherData = response
                 self.delegate?.successHeader(.succes(response))
             }else {
                 
             }
         }
-        self.delegate?.reloadTableView()
     }
     
     internal func successHeader(_ tpye: MainVMOutputs) {

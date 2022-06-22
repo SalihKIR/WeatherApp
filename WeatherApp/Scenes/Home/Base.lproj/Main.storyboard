@@ -16,10 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fCS-aA-B4f">
-                                <rect key="frame" x="0.0" y="44" width="414" height="618"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-cy-0Lo">
                                 <rect key="frame" x="16" y="756" width="382" height="31"/>
                                 <state key="normal" title="Button"/>
@@ -32,19 +28,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fCS-aA-B4f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1ar-ko-bIu"/>
-                            <constraint firstItem="fCS-aA-B4f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5dz-KO-cKY"/>
-                            <constraint firstItem="1sW-cy-0Lo" firstAttribute="top" secondItem="fCS-aA-B4f" secondAttribute="bottom" constant="94" id="9d8-wE-ueL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1sW-cy-0Lo" secondAttribute="trailing" constant="16" id="Jch-e2-ChR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1sW-cy-0Lo" secondAttribute="bottom" constant="75" id="T9b-HY-doE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fCS-aA-B4f" secondAttribute="trailing" id="agH-ji-iOX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fCS-aA-B4f" secondAttribute="bottom" constant="200" id="eLF-mz-MzP"/>
                             <constraint firstItem="1sW-cy-0Lo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jOD-tV-BBb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="1sW-cy-0Lo" id="CB5-vH-sNM"/>
-                        <outlet property="homeTabelView" destination="fCS-aA-B4f" id="JOD-Xa-eaI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
