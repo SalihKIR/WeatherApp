@@ -44,12 +44,12 @@ class MainVM: MainVMDelegate{
                 self.weatherData = response
                 self.delegate?.successHeader(.succes(response))
             }else {
-                
+                print(err)
             }
         }
     }
     
-    internal func successHeader(_ tpye: MainVMOutputs) {
-        self.delegate?.successHeader(tpye)
-    }
+//    internal func successHeader(_ tpye: MainVMOutputs) {
+//        self.delegate?.successHeader(tpye)
+//    }
 }

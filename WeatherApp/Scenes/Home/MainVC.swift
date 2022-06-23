@@ -10,19 +10,26 @@ import UIKit
 
 class MainVC: UIViewController {
  
-    @IBOutlet weak var homeTabelView: UITableView!
+   
+    @IBOutlet weak var labelDort: UILabel!
+    @IBOutlet weak var labelUc: UILabel!
+    @IBOutlet weak var labelIki: UILabel!
+    @IBOutlet weak var labelBir: UILabel!
     var viewmodel : MainVM = MainVM()
     @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewmodel.delegate = self
         viewmodel.getUpcomingData()
         
     }
     
     @IBAction func testBUTTON(_ sender: Any) {
         AppRouter.shared.showDetailPage(self.navigationController, data: viewmodel.weatherData!)
+        button.titleLabel?.text = viewmodel.weatherData?.request.language
+        labelBir.text = viewmodel.weatherData?.current.isDay
+        labelIki.text = viewmodel.weatherData?.current.observationTime
+        labelUc.text = viewmodel.weatherData?.request.language
     }
 }
     
@@ -32,6 +39,7 @@ extension MainVC: MainVMDelegateOutputs {
         switch type {
         case .succes(let lessons):
             button.titleLabel?.text = lessons.request.language
+            labelBir.text = viewmodel.weatherData?.current.isDay
         case .error(let string):
             break
         }

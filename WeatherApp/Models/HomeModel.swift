@@ -22,8 +22,10 @@ struct Current: Codable {
     let weatherDescriptions: [String]
     let windSpeed, windDegree: Int
     let windDir: String
-    let pressure, precip, humidity, cloudcover: Int
-    let feelslike, uvIndex, visibility: Int
+    let pressure: Int
+    let precip: Double
+    let humidity, cloudcover, feelslike, uvIndex: Int
+    let visibility: Int
     let isDay: String
 
     enum CodingKeys: String, CodingKey {

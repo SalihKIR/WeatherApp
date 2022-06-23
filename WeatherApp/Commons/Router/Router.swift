@@ -10,7 +10,7 @@ import UIKit
 
 final class AppRouter {
     
-    static var shared = AppRouter()
+    static var shared:AppRouter = AppRouter()
     
     init() {}
     
