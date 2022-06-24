@@ -9,41 +9,47 @@ import UIKit
 
 
 class MainVC: UIViewController {
- 
-   
-    @IBOutlet weak var labelDort: UILabel!
-    @IBOutlet weak var labelUc: UILabel!
-    @IBOutlet weak var labelIki: UILabel!
-    @IBOutlet weak var labelBir: UILabel!
+    
     var viewmodel : MainVM = MainVM()
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var statusCollectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        statusCollectionView.delegate = self
+        statusCollectionView.dataSource = self
+        
         viewmodel.getUpcomingData()
         
     }
     
-    @IBAction func testBUTTON(_ sender: Any) {
-        AppRouter.shared.showDetailPage(self.navigationController, data: viewmodel.weatherData!)
-        button.titleLabel?.text = viewmodel.weatherData?.request.language
-        labelBir.text = viewmodel.weatherData?.current.isDay
-        labelIki.text = viewmodel.weatherData?.current.observationTime
-        labelUc.text = viewmodel.weatherData?.request.language
-    }
+    //    @IBAction func testBUTTON(_ sender: Any) {
+    //        AppRouter.shared.showDetailPage(self.navigationController, data: viewmodel.weatherData!)
+    //
+    //    }
 }
-    
+
 
 extension MainVC: MainVMDelegateOutputs {
     func successHeader(_ type: MainVMOutputs) {
         switch type {
         case .succes(let lessons):
-            button.titleLabel?.text = lessons.request.language
-            labelBir.text = viewmodel.weatherData?.current.isDay
+            //button.titleLabel?.text = lessons.request.language
+            viewmodel.weatherData?.current.isDay
         case .error(let string):
             break
         }
     }
-    
+}
+    extension MainVC: UICollectionViewDelegate , UICollectionViewDataSource{
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            <#code#>
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            <#code#>
+        }
+        
+    }
     
 }
