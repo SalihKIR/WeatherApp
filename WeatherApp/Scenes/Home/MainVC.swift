@@ -34,7 +34,6 @@ extension MainVC: MainVMDelegateOutputs {
     func successHeader(_ type: MainVMOutputs) {
         switch type {
         case .succes(let lessons):
-            //button.titleLabel?.text = lessons.request.language
             viewmodel.weatherData?.current.isDay
         case .error(let string):
             break
@@ -43,13 +42,22 @@ extension MainVC: MainVMDelegateOutputs {
 }
     extension MainVC: UICollectionViewDelegate , UICollectionViewDataSource{
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            <#code#>
+           return 5
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            <#code#>
+            let weathercell = statusCollectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionCell", for: indexPath)
+           // weathercell.layer.borderColor = UIColor.systemIndigo.cgColor
+//            weathercell.layer.borderWidth = 0.3
+//            weathercell.layer.cornerRadius = 10
+            
+            return weathercell
         }
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+            {
+                return CGSize(width: 100, height: 100)
+            }
         
     }
     
-}
+
