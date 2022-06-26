@@ -17,24 +17,13 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //viewBackGround.backgroundColor = UIColor(patternImage: UIImage(named: "youtube.jpeg")!)
-        statusCollectionView.delegate = self
-        statusCollectionView.dataSource = self
-        statusCollectionView.register(WeatherCollectionCell.nibName, forCellWithReuseIdentifier: WeatherCollectionCell.identifier)
+       
+       
         viewmodel.delegate = self
         viewmodel.getUpcomingData()
         viewBackGround.backgroundColor = UIColor(patternImage: UIImage(named: "cloudy.jpg")!)
         
-        let tasarim = UICollectionViewFlowLayout()
-              tasarim.sectionInset = UIEdgeInsets(top: 100, left: 30, bottom: 0, right: 30)
-              tasarim.minimumLineSpacing = 10
-              tasarim.minimumInteritemSpacing = 10
-
-              let genislik = statusCollectionView.frame.size.width
-        let hucreGenislik = (genislik-150)/1
-        tasarim.itemSize = CGSize(width: hucreGenislik, height: hucreGenislik*1)
-        statusCollectionView!.collectionViewLayout = tasarim
-        
+      
         //AppRouter.shared.showDetailPage(self.navigationController, data: viewmodel.weatherData!)
     }
 
