@@ -29,20 +29,6 @@ class MainVC: UIViewController {
 
     
 }
-    extension MainVC: UICollectionViewDelegate , UICollectionViewDataSource{
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           return 1
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let weathercell = statusCollectionView.dequeueReusableCell(withReuseIdentifier: WeatherCollectionCell.identifier, for: indexPath) as! WeatherCollectionCell
-            weathercell.layer.borderColor = UIColor.systemIndigo.cgColor
-            weathercell.layer.borderWidth = 0.6
-            weathercell.layer.cornerRadius = 10
-            weathercell.cityName.text = viewmodel.weatherData?.location.name
-            return weathercell
-        }
-    }
 extension MainVC: MainVMDelegateOutputs {
     
     func successHeader(_ type: MainVMOutputs) {
