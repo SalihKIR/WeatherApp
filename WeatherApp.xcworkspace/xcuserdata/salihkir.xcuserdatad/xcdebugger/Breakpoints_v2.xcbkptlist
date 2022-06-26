@@ -23,81 +23,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2A8207E1-41DE-481D-B94C-DDA2D0A35BCA"
-            shouldBeEnabled = "Yes"
+            uuid = "ADB6CB21-DDCE-4D70-923F-02F53DEDDD59"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherApp/Scenes/Home/MainVC.swift"
+            filePath = "WeatherApp/Commons/Network/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "MainVC"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A77EF30A-CCFA-44E7-BCDB-DB7875356930"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherApp/Scenes/Home/MainVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "getUpcomingData()"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getDownloadMovie(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FB35D0C1-FB40-4689-B559-ADBB1646A865"
+            uuid = "DB6AE04C-07E9-4F6A-9279-DA9DCF38A973"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherApp/Commons/Network/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getDownloadMovie(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A46636B8-B8B4-4DBF-8D19-A063B395301D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherApp/Scenes/Home/MainVM.swift"
+            filePath = "WeatherApp/Commons/Network/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "getUpcomingData()"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getDownloadMovie(completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FB35D0C1-FB40-4689-B559-ADBB1646A865 - 3b68cb7b570434f5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;WeatherApp.APIWeather&gt;, Swift.String) -&gt; () in WeatherApp.MainVM.getUpcomingData() -&gt; ()"
-                  moduleName = "WeatherApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/salihkir/WeatherApp/WeatherApp/Scenes/Home/MainVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "236">
-               </Location>
-               <Location
-                  uuid = "FB35D0C1-FB40-4689-B559-ADBB1646A865 - 3b68cb7b570434f5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;WeatherApp.APIWeather&gt;, Swift.String) -&gt; () in WeatherApp.MainVM.getUpcomingData() -&gt; ()"
-                  moduleName = "WeatherApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/salihkir/WeatherApp/WeatherApp/Scenes/Home/MainVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "428">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
