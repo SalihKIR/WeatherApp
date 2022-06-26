@@ -8,21 +8,13 @@
 import Foundation
 import Alamofire
 
-protocol MainVMProtocol {
-    //
-    
-}
-
-protocol MainVMDelegate: AnyObject{
+protocol MainVMProtocol: AnyObject{
     var delegate: MainVMDelegateOutputs? {get set}
     var weatherData: APIWeather? {get set}
     func getUpcomingData()
-   
-
-  
 }
 
-protocol MainVMDelegateOutputs: AnyObject{
+protocol MainVMDelegateOutputs{
     func successHeader(_ type: MainVMOutputs)
 }
 
@@ -31,7 +23,7 @@ enum MainVMOutputs {
     case error(String)
 }
 
-class MainVM: MainVMDelegate{
+class MainVM: MainVMProtocol {
  
     var network: NetworkManager = NetworkManager()
     var weatherData: APIWeather?
@@ -49,7 +41,10 @@ class MainVM: MainVMDelegate{
         }
     }
     
-//    internal func successHeader(_ tpye: MainVMOutputs) {
-//        self.delegate?.successHeader(tpye)
-//    }
+     func successHeader(_ tpye: MainVMOutputs) {
+         DispatchQueue.main.async {
+             self.delegate?.successHeader(tpye)
+
+         }
+    }
 }

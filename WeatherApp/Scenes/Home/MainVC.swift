@@ -9,30 +9,35 @@ import UIKit
 
 
 class MainVC: UIViewController {
+    @IBOutlet weak var deneme: UILabel!
     
-    var viewmodel : MainVM = MainVM()
-    @IBOutlet weak var statusCollectionView: UICollectionView!
-    
+    var viewmodel : MainVMProtocol = MainVM()
+   
+    @IBOutlet weak var viewBackGround: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //viewBackGround.backgroundColor = UIColor(patternImage: UIImage(named: "youtube.jpeg")!)
         statusCollectionView.delegate = self
         statusCollectionView.dataSource = self
-        statusCollectionView.register(WeatherCollectionCell.self, forCellWithReuseIdentifier: "WeatherCollectionCell")
+        statusCollectionView.register(WeatherCollectionCell.nibName, forCellWithReuseIdentifier: WeatherCollectionCell.identifier)
+        viewmodel.delegate = self
+        viewmodel.getUpcomingData()
+        viewBackGround.backgroundColor = UIColor(patternImage: UIImage(named: "cloudy.jpg")!)
         
         let tasarim = UICollectionViewFlowLayout()
-              tasarim.sectionInset = UIEdgeInsets(top: 150, left: 30, bottom: 0, right: 30)
-              tasarim.minimumLineSpacing = 0
-              tasarim.minimumInteritemSpacing = 0
-              
+              tasarim.sectionInset = UIEdgeInsets(top: 100, left: 30, bottom: 0, right: 30)
+              tasarim.minimumLineSpacing = 10
+              tasarim.minimumInteritemSpacing = 10
+
               let genislik = statusCollectionView.frame.size.width
-        let hucreGenislik = (genislik-100)/1
+        let hucreGenislik = (genislik-150)/1
         tasarim.itemSize = CGSize(width: hucreGenislik, height: hucreGenislik*1)
         statusCollectionView!.collectionViewLayout = tasarim
-        viewmodel.getUpcomingData()
+        
+        //AppRouter.shared.showDetailPage(self.navigationController, data: viewmodel.weatherData!)
     }
 
-    //        AppRouter.shared.showDetailPage(self.navigationController, data: viewmodel.weatherData!)
     
 }
     extension MainVC: UICollectionViewDelegate , UICollectionViewDataSource{
@@ -41,26 +46,22 @@ class MainVC: UIViewController {
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let weathercell = statusCollectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionCell", for: indexPath) as! WeatherCollectionCell
+            let weathercell = statusCollectionView.dequeueReusableCell(withReuseIdentifier: WeatherCollectionCell.identifier, for: indexPath) as! WeatherCollectionCell
             weathercell.layer.borderColor = UIColor.systemIndigo.cgColor
             weathercell.layer.borderWidth = 0.6
             weathercell.layer.cornerRadius = 10
-            
+            weathercell.cityName.text = viewmodel.weatherData?.location.name
             return weathercell
         }
-//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-//            {
-//                return CGSize(width: 300, height: 300)
-//            }
-       
-      
-        
     }
 extension MainVC: MainVMDelegateOutputs {
+    
     func successHeader(_ type: MainVMOutputs) {
         switch type {
         case .succes(let lessons):
+            deneme.text = lessons.location.name
             viewmodel.weatherData?.current.isDay
+            
         case .error(let string):
             break
         }
