@@ -45,7 +45,10 @@ extension MainVC: MainVMDelegateOutputs {
         case .succes(let lessons):
             deneme.text = lessons.location.name
             print(lessons)
-            
+            guard let data = viewmodel.weatherData else { return }
+            countryLabel.text = viewmodel.weatherData?.location.country
+            weatherWind.text = "\(data.current.windSpeed)"
+            //weatherWind.text = String(viewmodel.weatherData?.current.windSpeed)
             
             
             weatherImageView.downloaded(from: viewmodel.weatherData?.current.weatherIcons[0] ?? "")
