@@ -10,25 +10,23 @@ import SDWebImage
 
 class MainVC: UIViewController {
     
+    @IBOutlet weak var briefDescriptionView: UIView!
     @IBOutlet weak var deneme: UILabel!
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var countryLabel: UILabel!
-    
     @IBOutlet weak var weatherWind: UILabel!
     @IBOutlet weak var weatherTemp: UILabel!
     var viewmodel : MainVMProtocol = MainVM()
-   
     @IBOutlet weak var viewBackGround: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-       
         viewmodel.delegate = self
         viewmodel.getUpcomingData()
         viewBackGround.backgroundColor = UIColor(patternImage: UIImage(named: "HD3")!)
-        firstView.layer.cornerRadius = 10
+        briefDescriptionView.layer.cornerRadius = 30
+        firstView.layer.cornerRadius = 30
       
         //AppRouter.shared.showDetailPage(self.navigationController, data: viewmodel.weatherData!)
     }
@@ -47,18 +45,13 @@ extension MainVC: MainVMDelegateOutputs {
             print(lessons)
             guard let data = viewmodel.weatherData else { return }
             countryLabel.text = viewmodel.weatherData?.location.country
-            weatherWind.text = "\(data.current.windSpeed)"
-            //weatherWind.text = String(viewmodel.weatherData?.current.windSpeed)
-            
-            
+            weatherWind.text = "Rüzgar:\(data.current.windSpeed)"
+
             weatherImageView.downloaded(from: viewmodel.weatherData?.current.weatherIcons[0] ?? "")
-            
-           //weatherImageView.sd_imageURL(with: URL(string: viewmodel.weatherData?.current.weatherIcons))
         case .error(let string):
             break
         }
     }
-    
     
 }
 extension UIImageView {
